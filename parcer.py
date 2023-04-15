@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from sys import exit
+import streamlit as sl
 
 # Ging to import UserAgent to make best experience with parcing
 ua = UserAgent()
@@ -43,9 +44,15 @@ Next function "main_parce" using information about length pages going to search 
         length_of_pages = self.get_max_pages() + 1
         salaries, responses, viewers, hrefs = [], [], [], []
 
+        progress_text = "Operation in progress. Please wait."
+        my_bar = sl.progress(0.0, text=progress_text)
 
+        # for percent_complete in range(length_of_pages+1):
+        #     time.sleep(0.1)
+        #     my_bar.progress(percent_complete + 1, text=progress_text)
         for page in range(1, length_of_pages):
                 print(f'Gathering information now: page {page} of {length_of_pages-1}')
+
                 url = f"https://www.work.ua/ru/jobs-{self.city}-{self.job}/?page{page}"
 
                 response = requests.get(url, headers)
@@ -75,10 +82,13 @@ Next function "main_parce" using information about length pages going to search 
                         viewers.append(view)
                         hrefs.append(link)
                         salaries.append(salary)
+                koef = 100/(length_of_pages-1)
+                my_bar.progress(page*koef/100, text=progress_text)
 
         data = {'salaries': salaries, 'responses': responses, 'viewers': viewers, 'hrefs': hrefs}
         print('\ndata.csv created in your directory')
         if len(hrefs) == 0:
-             print('No data in this vacancy, try again')
+             sl.error('No vacancies, type something else')
              exit()
         return data
+    
