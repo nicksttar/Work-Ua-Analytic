@@ -23,6 +23,6 @@ All aspects of the project have been converted into a web application. The follo
 5. Enter your desired job position and area, next click the "Analize" button.
 6. The program will generate three graphs to help you understand the job situation in your area and "Quick Report".
 ## Example
-You can try this app by following this link: https://nicksttar-work-ua-analytic.streamlit.app/
+You can try this app by following this link: https://nicksttar-work-ua-analytic-main-o35s80.streamlit.app/
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
