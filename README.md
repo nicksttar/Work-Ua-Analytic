@@ -1,5 +1,5 @@
 # Work Ua Analytic
-This project is a Python-based web scraper designed to analyze job postings on the Work.ua website. It utilizes various data processing and visualization libraries, such as NumPy, Seaborn, Matplotlib, Pandas, Requests, Beautiful Soup, and Fake User Agent, to generate graphs and provide various job analytics.
+This project is a Python-based web scraper designed to analyze job postings on the Work.ua website. It utilizes various data processing and visualization libraries, such as NumPy, Seaborn, Matplotlib, Pandas, Requests, Beautiful Soup, and Fake User Agent, to generate graphs and provide various job analytics. Please understand that web application works from on stremlit host and this cause slow working. 
 ## Files
 * main.py: the application file.
 * parser.py: a script that scrapes information from Work.ua.
@@ -8,6 +8,11 @@ This project is a Python-based web scraper designed to analyze job postings on t
 * cities.txt: a list of cities where the program operates.
 * analytic.py: a script that generates job analytics within the application.
 ## Updates
+### Version 2.2
+Small update:
+* Fixed ucorrect link clicking.
+* Fixed troubles with launching.
+* Add warning in Readme.
 ### Version 2.1
 All aspects of the project have been converted into a web application. The following features have been added:
 * A CSV download feature.
