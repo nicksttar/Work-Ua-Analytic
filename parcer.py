@@ -71,7 +71,7 @@ Next function "main_parce" using information about length pages going to search 
                     response = requests.get(link, headers)
                     soup = BeautifulSoup(response.text, 'lxml')
                     try:
-                        salary = soup.find('b', class_="text-black").text
+                        salary = soup.find('b', class_="text-default").text
                     except AttributeError:
                         salary = 'no salary'
                     finally:
